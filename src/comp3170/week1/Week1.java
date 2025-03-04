@@ -17,10 +17,12 @@ import comp3170.Window;
 import comp3170.OpenGLException;
 
 public class Week1 implements  IWindowListener  {
-
+	
+	// the actual window. This class has been provided to you in the 3170 library
 	private Window window;
 	private Shader shader;
 	
+	// Point towards where our shaders are kept
 	final private File DIRECTORY = new File("src/comp3170/week1"); 
 	final private String VERTEX_SHADER = "vertex.glsl";
 	final private String FRAGMENT_SHADER = "fragment.glsl";

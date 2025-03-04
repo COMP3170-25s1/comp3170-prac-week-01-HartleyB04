@@ -24,7 +24,6 @@ public class Scene {
 	private int screenWidth;
 	private int screenHeight;
 	
-	
 	public Scene (int width, int height) {
 	
 		// Get the size of the screen
@@ -38,14 +37,17 @@ public class Scene {
 		// define the mesh - a collection of vertices that make up a square.
 		// @formatter:off
 		
-		vertices = new Vector4f[] {
-			new Vector4f(1.0f, 1.0f, 0.0f, 1.0f),
+		vertices = new Vector4f[] { // background shape
 			new Vector4f(-1.0f, 1.0f, 0.0f, 1.0f),
-			new Vector4f(-1.0f, -1.0f, 0.0f, 1.0f),
-			
-			new Vector4f(-1.0f, -1.0f, 0.0f, 1.0f),
-			new Vector4f(1.0f, -1.0f, 0.0f, 1.0f),
 			new Vector4f(1.0f, 1.0f, 0.0f, 1.0f),
+			new Vector4f(1.0f, -1.0f, 0.0f, 1.0f),
+			
+			new Vector4f(1.0f, -1.0f, 0.0f, 1.0f),
+			new Vector4f(-1.0f, -1.0f, 0.0f, 1.0f),
+			new Vector4f(-1.0f, 1.0f, 0.0f, 1.0f),
+			
+			
+			
 		};
 			
 		// @formatter:on
@@ -66,7 +68,7 @@ public class Scene {
 		shader.setAttribute("a_position", vertexBuffer);
 		
 		// write the colour value into the u_colour uniform. For now, we will write colours as Vec3s (R,G,B).
-		Vector3f colour = new Vector3f(1.0f, 0.0f, 1.f); // RED
+		Vector3f colour = new Vector3f(0.0f, 0.0f, 0.5f); // shape colour
 		shader.setUniform("u_colour", colour);
 		
 		Vector2f screenSize = new Vector2f(screenWidth, screenHeight);
